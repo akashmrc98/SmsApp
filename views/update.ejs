@@ -1,0 +1,151 @@
+<html>
+  <head>
+    <%- include('./includes/head.ejs') %>
+    <style>
+      .msg {
+        font-weight: bolder;
+        width: 500px;
+        border: 2px;
+        border-style: double;
+        border-radius: 25px;
+      }
+    </style>
+  </head>
+
+  <body class="bg-dark">
+    <center>
+      <%- include('./includes/header.ejs') %>
+      <div>
+        <%- include('./includes/navbar.ejs') %>
+      </div>
+
+      <h2 class="text-white">UPDATE</h2>
+
+      <%if(msg){%>
+      <h3 class="bg-success msg"><%=msg%></h3>
+
+      <%}%> <%if(user){%>
+      <div class="bg-primary msg">
+        <form
+          action="/update/<%=user._id%>"
+          style="padding:40px;"
+          method="POST"
+        >
+          <div class="form-group">
+            <label>Name</label>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Enter Name"
+              name="name"
+              value="<%=user.name%>"
+            />
+          </div>
+
+          <div class="form-group">
+            <label>College</label>
+            <input
+              type="text"
+              class="form-control"
+              name="college"
+              placeholder="Enter College Name"
+              value="<%=user.college%>"
+            />
+          </div>
+
+          <div class="form-group">
+            <label>Place</label>
+            <input
+              type="text"
+              class="form-control"
+              name="place"
+              placeholder="Enter Location"
+              value="<%=user.location%>"
+            />
+          </div>
+
+          <div class="form-group">
+            <label>Mobile</label>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Enter Mobile "
+              name="mobile"
+              value="<%=user.mobile%>"
+            />
+          </div>
+
+          <div class="form-group">
+            <label>Select Events</label>
+            <select name="event" multiple size="14" class="form-control">
+              <option value="Admiring Advertisment"
+                >Admiring Advertisment</option
+              >
+              <option value="Blogger Design">Blogger Design</option>
+              <option value="Code Hunt">Code Hunt</option>
+              <option value="Code and Debugging">Code and Debugging</option>
+              <option value="Dance">Dance</option>
+              <option value="Dazzle Coding">Dazzle Coding</option>
+              <option value="Paper Presentation">Paper Presentation</option>
+              <option value="Poster Presentation">Poster Presentation</option>
+              <option value="Tech Quiz">Tech Quiz</option>
+              <option value="Tech Selfie">Tech Selfie</option>
+              <option value="Telugu Poetry">Telugu Poetry</option>
+              <option value="Treasure Hunt">Treasure Hunt</option>
+              <option value="Web Designing">Web Designing</option>
+              <option value="Word Runner">Word Runner</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>Companion1</label>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Enter Companion1 "
+              name="c1"
+              value="<%=user.c1%>"
+            />
+          </div>
+
+          <div class="form-group">
+            <label>Companion2</label>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Enter Companion2 "
+              name="c2"
+              value="<%=user.c2%>"
+            />
+          </div>
+
+          <div class="form-group">
+            <label>Companion3</label>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Enter Companion2 "
+              name="c3"
+              value="<%=user.c3%>"
+            />
+          </div>
+
+          <div class="form-group">
+            <label>Amount</label>
+            <input
+              type="text"
+              class="form-control"
+              readonly
+              value="<%=user.amount%>"
+            />
+          </div>
+
+          <input type="submit" class="btn bg-dark text-white" value="Update" />
+        </form>
+      </div>
+      <%}else{%>
+      <h3 class="bg-warning msg">User Does not Exist</h3>
+      <%}%>
+    </center>
+  </body>
+</html>

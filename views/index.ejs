@@ -1,0 +1,58 @@
+<html>
+  <%- include('./includes/head.ejs') %>
+  </head>
+
+  <body class="bg-dark">
+      <center>
+      <%- include('./includes/header.ejs') %>
+      <div>
+          <%- include('./includes/navbar.ejs') %>
+        </div>
+ 
+ 
+      <h2 class="text-white ">SMS APP</h2>
+      <%if(sendResult){%>
+      <h3 class="bg-success msg"><%=sendResult%></h3>
+      
+      <%}%>
+      <form class="Jumbotron bg-primary msg" method="POST">
+        <div class="form-group">
+          <label for="messagex"
+            ><i><b>Enter Message</b></i></label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="message"
+            placeholder="Enter message"
+          />
+        </div>
+        <button type="submit" class="btn btn-dark">
+          <b><i>Send message</i></b>
+        </button>
+      </form>
+      <div class="bg-light">
+        <%if(data.length > 0 ){%>
+        <table class="table">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">Message</th>
+              <th scope="col">SendAt</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% for(i = 0; i < data.length; i++){%>
+            <tr>
+              <td><%=data[i].message%></td>
+              <td><%=data[i].sendAt%></td>
+            </tr>
+            <%}%>
+          </tbody>
+        </table>
+        <%}else{%>
+        <h2>No Records Found!</h2>
+        <%}%>
+      </div>
+    </center>
+  </body>
+</html>

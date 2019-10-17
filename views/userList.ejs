@@ -1,0 +1,47 @@
+<html>
+  <%- include('./includes/head.ejs') %>
+  </head>
+
+  <body class="bg-dark">
+      <center>
+      <%- include('./includes/header.ejs') %>
+      <div>
+          <%- include('./includes/navbar.ejs') %>
+        </div>
+ 
+ 
+      <h2 class="text-white ">LIST</h2>
+
+      <div class="bg-light">
+        <%if(data.length > 0 ){%>
+        <table class="table">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Name</th>
+              <th scope="col">Mobile</th>
+              <th scope="col">College</th>
+              <th scope="col">Events</th>
+              <th scope="col">Amount Paid</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% for(i = 0; i < data.length; i++){%>
+            <tr>
+              <td><%=data[i].sid%></td>
+              <td><%=data[i].name%></td>
+              <td><%=data[i].mobile%></td>
+              <td><%=data[i].college%></td>
+              <td><%=data[i].events%></td>
+              <td><%=data[i].amount%></td>
+            </tr>
+            <%}%>
+          </tbody>
+        </table>
+        <%}else{%>
+        <h2>No Records Found!</h2>
+        <%}%>
+      </div>
+    </center>
+  </body>
+</html>

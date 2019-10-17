@@ -1,0 +1,34 @@
+{
+  "name": "msgapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "engines": {
+    "node": "10.16.0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "connect-flash": "^0.1.1",
+    "dotenv": "^8.1.0",
+    "ejs": "^2.7.1",
+    "express": "^4.17.1",
+    "express-session": "^1.16.2",
+    "express-sessions": "^1.0.6",
+    "express-validator": "^6.2.0",
+    "formidable": "^1.2.1",
+    "helmet": "^3.21.1",
+    "mongoose": "^5.7.0",
+    "morgan": "^1.9.1",
+    "unirest": "^0.6.0",
+    "xlsx": "^0.15.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.2"
+  }
+}
