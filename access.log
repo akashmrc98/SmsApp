@@ -808,3 +808,6 @@
 ::1 - - [25/Oct/2019:19:25:21 +0000] "GET /registration HTTP/1.1" 200 5917 "https://localhost:3001/user-list" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36"
 ::1 - - [25/Oct/2019:19:25:25 +0000] "GET /update?mobilex=9494535327 HTTP/1.1" 200 6406 "https://localhost:3001/registration" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36"
 ::1 - - [25/Oct/2019:19:25:28 +0000] "GET /user-list HTTP/1.1" 200 3426 "https://localhost:3001/update?mobilex=9494535327" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36"
+::1 - - [04/Nov/2019:15:16:28 +0000] "GET / HTTP/1.1" 302 52 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.87 Safari/537.36"
+::1 - - [04/Nov/2019:15:16:28 +0000] "GET /sms HTTP/1.1" 200 3049 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.87 Safari/537.36"
+::1 - - [04/Nov/2019:15:16:29 +0000] "GET /favicon.ico HTTP/1.1" 404 150 "https://localhost:3001/sms" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.87 Safari/537.36"

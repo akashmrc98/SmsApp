@@ -1,2 +1,4 @@
 node_modules
 numberConnector.R
+server.cert
+server.key

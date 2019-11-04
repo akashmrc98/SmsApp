@@ -10,19 +10,22 @@ const morgan = require("morgan");
 const https = require("https");
 const fs = require("fs");
 
-const privateKey = fs.readFileSync("server.key");
-const certificate = fs.readFileSync("server.cert");
+// const privateKey = fs.readFileSync("server.key");
+// const certificate = fs.readFileSync("server.cert");
 
 const accessLogStream = fs.createWriteStream(
-  path.join(__dirname, "access.log"),
-  { flags: "a" }
+  path.join(__dirname, "access.log"), {
+    flags: "a"
+  }
 );
 
 var smsRoutes = require("./routes/smsRoute");
 var registrationRoutes = require("./routes/registrationRoute");
 var editRoutes = require("./routes/searchRoute");
 
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({
+  extended: false
+}));
 app.use(bodyParser.json());
 
 app.set("view engine", "ejs");
@@ -40,19 +43,25 @@ app.use((req, res, next) => {
 });
 
 app.use(
-  session({ secret: "1@a2#b3$5c", saveUninitialized: true, resave: false })
+  session({
+    secret: "1@a2#b3$5c",
+    saveUninitialized: true,
+    resave: false
+  })
 );
 
 app.use(helmet());
-app.use(morgan("combined", { stream: accessLogStream }));
+app.use(morgan("combined", {
+  stream: accessLogStream
+}));
 app.use(flash());
 
 
- 
- app.get("/", (req,res,next)=>{
-   res.redirect("/sms")
- })
- 
+
+app.get("/", (req, res, next) => {
+  res.redirect("/sms")
+})
+
 
 app.use(registrationRoutes);
 app.use(smsRoutes);
@@ -70,15 +79,7 @@ mongoose
     useNewUrlParser: true
   })
   .then(result => {
-    https
-      .createServer(
-        {
-          key: privateKey,
-          cert: certificate
-        },
-        app
-      )
-      .listen(3001);
+    app.listen(3000);
   })
   .catch(err => {
     console.log(err);
